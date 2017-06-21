@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tbaseColorcolorPrimary">#FF4081</color>
+    <color name="tbaseColorcolorPrimaryDark">#000000</color>
+    <color name="tbaseColorcolorAccent">#FF4081</color>
+    <color name="tbaseColortransparent">#0000</color><!-- 透明 -->
+    <color name="tbaseColorcolorNormal_status">#ffffff</color><!-- -->
+</resources>

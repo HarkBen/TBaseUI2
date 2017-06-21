@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center_vertical"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <RadioButton
+        android:id="@+id/tbase_titleLayout_left"
+        android:layout_width="wrap_content"
+        android:maxWidth="50dp"
+        android:layout_height="wrap_content"
+        android:maxHeight="50dp"
+        android:button="@null"
+        tools:text="左边按钮得到的道德的"
+        android:maxLines="2"
+        android:maxLength="8"
+        android:ellipsize="end"
+        android:textSize="@dimen/sp_12"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:textColor="@android:color/white"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:textColor="@android:color/white"
+        android:id="@+id/tbase_titleLayout_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxWidth="250dp"
+        android:maxLines="1"
+        android:ellipsize="marquee"
+        android:scrollHorizontally="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        tools:text="中间啊实打实三阿斯灌灌灌灌灌灌灌灌顿萨达飒飒的大殿"
+        android:textSize="@dimen/sp_20"
+        android:button="@null"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioButton
+        android:textColor="@android:color/white"
+        android:id="@+id/tbase_titleLayout_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:gravity="center"
+        android:maxHeight="50dp"
+        android:maxWidth="50dp"
+        android:layout_gravity="right"
+        android:textSize="@dimen/sp_12"
+        tools:text="右边按钮得得得得的"
+        android:maxLines="2"
+        android:maxLength="8"
+        android:ellipsize="end"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        />
+</RelativeLayout>

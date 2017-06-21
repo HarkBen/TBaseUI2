@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tbase_activity_rootlayout"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.rg.ui.basetitle.TbaseTitleBar
+        android:id="@+id/tbase_activity_titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:id="@+id/tbase_activity_childContentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tbase_activity_loadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone">
+        <com.victor.loading.rotate.RotateLoading
+            android:id="@+id/tbasr_activity_loadingImage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:loading_width="2dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/init_loading"
+            android:layout_marginLeft="5dip"
+            android:textSize="@dimen/tbase_textSize"/>
+
+    </LinearLayout>
+
+</LinearLayout>
