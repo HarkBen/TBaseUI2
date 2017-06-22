@@ -18,7 +18,7 @@
 |Version|1.0|
 |minSdkVersion|14|
 |permission|READ_EXTERNAL_STORAGE、WRITE_EXTERNAL_STORAGE、INTERNET|
-|示例安装包下载|[tbaseui-debug.apk](https://github.com/HarkBen/TBaseUI2/raw/master/file%20list/tbaseui-debug.apk)|
+|示例安装包下载|[tbaseui-debug.apk](https://github.com/HarkBen/TBaseUI2/raw/master/filelist/tbaseui-debug.apk)|
 
 ![扫码下载](./filelist/qcode.png)
 
