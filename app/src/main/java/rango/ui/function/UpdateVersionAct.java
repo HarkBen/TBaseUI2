@@ -13,6 +13,8 @@ import com.rg.ui.basetitle.TbaseTitleBar;
 
 import rango.tbaseui.R;
 
+import static android.R.attr.button;
+
 /**
  * Create on 2017/6/21.
  * github  https://github.com/HarkBen
@@ -29,7 +31,8 @@ public class UpdateVersionAct extends TBaseActivity {
         getTitleBar().setText("使用更新", TbaseTitleBar.POSITION_CENTER);
 
         editText = new EditText(this);
-        editText.setText("https://github.com/HarkBen/TBaseUI2/raw/master/file%20list/app-debug.apk");
+        editText.setText("https://github.com/HarkBen/TBaseUI2/raw/master/filelist/tbaseui-debug.apk");
+        setContentLayout(editText);
         Button button = new Button(this);
         button.setText("建议版本更新");
         button.setBackgroundResource(R.drawable.btn_ripple);
