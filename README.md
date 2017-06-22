@@ -7,7 +7,7 @@
 ***
 #### demo效果图:
 
-![updatev.gif](http://upload-images.jianshu.io/upload_images/2909203-053b36a3c2329ed3.gif?imageMogr2/auto-orient/strip)![navigationbottom.gif](http://upload-images.jianshu.io/upload_images/2909203-0df2123f7cee277d.gif?imageMogr2/auto-orient/strip)
+![updatev.gif](http://upload-images.jianshu.io/upload_images/2909203-053b36a3c2329ed3.gif?imageMogr2/auto-orient/strip)![swipeback.gif](http://upload-images.jianshu.io/upload_images/2909203-08ed2d9a6b0a5dc2.gif?imageMogr2/auto-orient/strip)
 
 ![sliding.gif](http://upload-images.jianshu.io/upload_images/2909203-282044e29590be89.gif?imageMogr2/auto-orient/strip)![navigationbottom.gif](http://upload-images.jianshu.io/upload_images/2909203-0df2123f7cee277d.gif?imageMogr2/auto-orient/strip)
 
