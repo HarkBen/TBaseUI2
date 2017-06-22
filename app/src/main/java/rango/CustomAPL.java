@@ -1,9 +1,8 @@
 package rango;
 
 import android.app.Application;
-import android.util.Log;
 
-import com.rg.function.utils.TBbaseSPUtils;
+import com.rg.function.utils.TBaseManager;
 
 import rango.tbaseui.R;
 
@@ -20,9 +19,7 @@ public class CustomAPL extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        TBbaseSPUtils.initTeme(this, R.style.AppTheme,getResources()
-                .getColor(R.color.colorAccent));
-        Log.d("CustomAPL","color="+getResources()
+        TBaseManager.init(this,R.style.AppTheme,getResources()
                 .getColor(R.color.colorAccent));
     }
 

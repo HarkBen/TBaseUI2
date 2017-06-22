@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 设置进度背景颜色 -->
+    <item android:id="@android:id/background">
+        <shape>
+            <corners android:radius="10dp"/>
+            <solid android:color="@color/tbaseWhitesmoke"/>
+        </shape>
+    </item>
+<!-- 设置进度值颜色 -->
+	<item android:id="@android:id/progress">
+	    <clip>
+	        <shape>
+	            <corners android:radius="4dp"/>
+	            <solid  android:color="@color/tbaseGray_5"/>
+	        </shape>
+	        </clip>
+	</item>
+</layer-list>

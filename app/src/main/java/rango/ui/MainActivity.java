@@ -21,6 +21,7 @@ import rango.ui.function.FunctionListBean;
 import rango.ui.function.SlidingMenuAct1;
 import rango.ui.function.SlidingMenuAct2;
 import rango.ui.function.SwipeBackAct;
+import rango.ui.function.UpdateVersionAct;
 
 public class MainActivity extends TBaseActivity {
 
@@ -56,6 +57,7 @@ public class MainActivity extends TBaseActivity {
         datas.add(new FunctionListBean(SlidingMenuAct2.class,"快速实现侧滑 - 2"));
         datas.add(new FunctionListBean(BottomNavigationAct.class,"快速实现底部导航及fragment切换"));
         datas.add(new FunctionListBean( SwipeBackAct.class,"边缘右滑返回"));
+        datas.add(new FunctionListBean( UpdateVersionAct.class,"版本更新"));
     }
 
     private void initView() {

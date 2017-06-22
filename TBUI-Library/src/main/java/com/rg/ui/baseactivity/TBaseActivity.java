@@ -21,7 +21,7 @@ import com.victor.loading.rotate.RotateLoading;
 import com.rg.ui.R;
 import com.rg.ui.basetitle.TbaseTitleBar;
 import com.rg.function.customview.swipebaklayout.SwipeBackActivity;
-import com.rg.function.utils.TBbaseSPUtils;
+import com.rg.function.utils.TBaseSPUtils;
 
 /**
  * BaseActivity
@@ -79,8 +79,8 @@ public abstract class TBaseActivity extends SwipeBackActivity {
         getSwipeBackLayout().setEdgeSize(40);
         getSwipeBackLayout().setEnableGesture(openSwipeBack());
         //设置主题
-        if (TBbaseSPUtils.getInt(this, TBbaseSPUtils.THEME_ID) != 0) {
-            setTheme(TBbaseSPUtils.getInt(this, TBbaseSPUtils.THEME_ID));
+        if (TBaseSPUtils.getInt(this, TBaseSPUtils.THEME_ID) != 0) {
+            setTheme(TBaseSPUtils.getInt(this, TBaseSPUtils.THEME_ID));
         }
     }
 
@@ -141,8 +141,8 @@ public abstract class TBaseActivity extends SwipeBackActivity {
      * 启用重绘
      */
     public final void switchTheme(@StyleRes int styleId, @ColorInt int color) {
-        TBbaseSPUtils.saveInt(this, TBbaseSPUtils.THEME_ID, styleId);
-        TBbaseSPUtils.saveInt(this, TBbaseSPUtils.THEME_COLOR, color);
+        TBaseSPUtils.saveInt(this, TBaseSPUtils.THEME_ID, styleId);
+        TBaseSPUtils.saveInt(this, TBaseSPUtils.THEME_COLOR, color);
         Intent intent = getIntent();
         overridePendingTransition(0, 0);//不设置进入退出动画
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -152,7 +152,7 @@ public abstract class TBaseActivity extends SwipeBackActivity {
     }
 
     private int getThemeColor() {
-        int color = TBbaseSPUtils.getInt(this, TBbaseSPUtils.THEME_COLOR);
+        int color = TBaseSPUtils.getInt(this, TBaseSPUtils.THEME_COLOR);
         if (color == -1) {
             color = getResources().getColor(R.color.tbaseColorcolorNormal_status);
         }

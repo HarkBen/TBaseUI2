@@ -5,4 +5,19 @@
         <item name="shadow_right">@drawable/shadow_right</item>
         <item name="shadow_bottom">@drawable/shadow_bottom</item>
     </style>
+
+    <style name="update_dialogNoTitle" parent="@android:style/Theme.Dialog">
+        <!-- Dialog的windowFrame框为无 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否漂现在activity上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <!-- dim:模糊的 阴影效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 背景图片的大小也影响窗口的大小 -->
+        <item name="android:windowBackground">@color/tbaseColortransparent</item>
+    </style>
 </resources>

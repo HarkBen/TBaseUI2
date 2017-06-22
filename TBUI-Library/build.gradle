@@ -16,6 +16,11 @@ android {
         }
     }
     productFlavors {}
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
 }
 
 dependencies {
@@ -23,4 +28,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.victor:lib:1.0.4'
+    compile 'com.liulishuo.filedownloader:library:1.5.6'
 }

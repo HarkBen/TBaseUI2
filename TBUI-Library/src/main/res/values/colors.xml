@@ -5,4 +5,8 @@
     <color name="tbaseColorcolorAccent">#FF4081</color>
     <color name="tbaseColortransparent">#0000</color><!-- 透明 -->
     <color name="tbaseColorcolorNormal_status">#ffffff</color><!-- -->
+    <color name="tbaseWhite">#FFFFFFFF</color>
+    <color name="tbaseWhitesmoke">#F5F5F5</color><!--烟白色 -->
+    <color name="tbaseGray_5">#CDCDCD</color>
+    <color name="tbaseColortransparent_07">#09000000</color><!-- 透明 70 -->
 </resources>
