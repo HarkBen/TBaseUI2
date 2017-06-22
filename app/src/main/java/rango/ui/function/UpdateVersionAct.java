@@ -47,8 +47,8 @@ public class UpdateVersionAct extends TBaseActivity {
         info.setMandatory(mandatory);//是否强制更新
         info.setApkLoadUrl(editText.getText().toString().trim());
         info.setDescription("新版本添加了终极无敌新功能，赶快下载更新吧");
-        info.setProjectName("TBaseUITest");
-        info.setNewVersionName("1.1");
+        info.setProjectName("TBaseUI");
+        info.setNewVersionName("1.2");
         TBaseManager.showUpdateVersionDialog(this, info, new UpdateVersionDialog.VersionCallback() {
             @Override
             public void onSkipUpdate() {
