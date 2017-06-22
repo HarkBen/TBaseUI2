@@ -28,7 +28,7 @@
 |number|function list|remark|
 |:--:|:--|---|
 |1.|Titlebr StatusBar|颜色,透明度,Left Center Right 按钮|
-|2.|加载动画|和UI页面同级的原型progressbar,跟随主题配色|
+|2.|加载动画|和UI页面同级的环状progressbar,跟随主题配色，可DIY替换|
 |3.|快速侧滑集成|两种侧滑，并支持一键切换Fragment 无需初始化|
 |4.|全局一键切换fragment|封装Fragment加载策略,防止重叠和内测溢出|
 |5.|边缘右滑返回|使用开源库SwipeBack|
