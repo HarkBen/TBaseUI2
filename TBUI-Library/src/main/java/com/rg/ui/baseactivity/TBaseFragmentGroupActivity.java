@@ -56,7 +56,7 @@ public abstract class TBaseFragmentGroupActivity extends TBaseActivity {
         return switchFragment(fragmentContainerId(), clazz, null, str);
     }
 
-    public TBaseFragment findFragmentByTag(Class<? extends TBaseFragment> clazz) {
+    public TBaseFragment findFragmentByTag(Class clazz) {
         FragmentManager fm = getSupportFragmentManager();
         return (TBaseFragment) fm.findFragmentByTag(clazz.getName());
     }

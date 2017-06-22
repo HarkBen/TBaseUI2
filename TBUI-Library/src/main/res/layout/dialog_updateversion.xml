@@ -6,10 +6,13 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="55dp"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:padding="4dp"
+       android:paddingTop="4dp"
+        android:paddingRight="4dp"
+        android:paddingLeft="4dp"
+        android:paddingBottom="0.1dp"
         android:background="@drawable/sp_white"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -20,18 +23,20 @@
             android:text="发现新版本"
             android:padding="10dp"
             android:gravity="center"
+            android:textColor="@color/tbaseTextColor"
             android:textSize="21sp"
             android:layout_height="wrap_content" />
         <View
             android:layout_width="match_parent"
             android:layout_height="0.4dp"
-            android:background="@color/tbaseWhitesmoke"
+            android:background="@color/tbaseGray_5"
             ></View>
         <TextView
             android:id="@+id/duv_description"
             android:layout_width="match_parent"
             android:padding="10dp"
             android:minHeight="80dp"
+            android:textColor="@color/tbaseTextColor"
             tools:text="新版本能送你上火星，还不下载？@#￥%……*（）@#￥%……*（￥%…!@(*(!*(*@(*!@(*@(*!@(*@(*@!(*@(*(@*@!(*(@*(@*(*(@!*(!@*(@!*(@*(@*!(*!@(*!@(*@(*@!(!*@(@*!(*@!(*@(*@!(*@!(*@!(*@!(@!*(@!*(@!*(*@!(*@!(*!(@*(!*@(*!@(*@(@*(*@!(*!@(*!@(*@!(*@(*(!@*(@*(*(…（"
             android:layout_height="wrap_content" />
         <ProgressBar
@@ -47,7 +52,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.4dp"
-            android:background="@color/tbaseWhitesmoke"
+            android:background="@color/tbaseGray_5"
             ></View>
         <LinearLayout
             android:layout_width="match_parent"
@@ -62,11 +67,12 @@
                 android:gravity="center"
                 android:background="@drawable/se_btn_gray_white"
                 android:layout_height="45dp" />
-            <TextView
+            <Button
                 android:id="@+id/duv_leftBtn"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:text="稍后再说"
+                android:textColor="@color/tbaseTextColor"
                 android:gravity="center"
                 android:background="@drawable/se_btn_gray_white"
                 android:layout_height="45dp" />
@@ -74,13 +80,14 @@
                 android:id="@+id/duv_verticalLine"
                 android:layout_width="0.4dp"
                 android:layout_height="45dp"
-                android:background="@color/tbaseWhitesmoke"
+                android:background="@color/tbaseGray_5"
                 ></View>
-            <TextView
+            <Button
                 android:id="@+id/duv_rightBtn"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:text="立即下载"
+                android:textColor="@color/tbaseTextColor"
                 android:gravity="center"
                 android:background="@drawable/se_btn_gray_white"
                 android:layout_height="45dp" />

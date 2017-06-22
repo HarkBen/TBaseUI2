@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="rango.tbaseui">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="rango.CustomAPL"
         android:allowBackup="true"
@@ -26,7 +30,7 @@
         <activity android:name="rango.ui.function.BottomNavigationAct"></activity>
         <activity android:name="rango.ui.function.SwipeBackAct"></activity>
         <activity android:name="rango.ui.function.UpdateVersionAct"></activity>
-
+        <activity android:name="rango.ui.function.TitleBarAndStatusBarAct"></activity>
     </application>
 
 </manifest>

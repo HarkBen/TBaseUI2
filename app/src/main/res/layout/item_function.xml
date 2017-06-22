@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 <TextView
     android:id="@+id/if_tv_name"
-    android:background="@drawable/se_btn_gray_white"
+    android:background="@drawable/btn_ripple"
     android:layout_width="match_parent"
     android:gravity="center"
     android:textSize="20sp"

@@ -21,6 +21,8 @@ import rango.tbaseui.R;
  */
 public class SlidingMenuAct1 extends TBaseFragmentGroupActivity {
 
+    private View menu1,menu2;
+
     @Override
     public void onLayoutloaded() {
         removeTitleBar();
@@ -34,6 +36,17 @@ public class SlidingMenuAct1 extends TBaseFragmentGroupActivity {
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
+
+        menu1 = findViewById(R.id.menu_itema);
+        menu2 = findViewById(R.id.menu_itemb);
+        menu1.setOnClickListener(v->{
+            switchFragment(FragmentA.class);
+            drawer.closeDrawers();
+        });
+        menu2.setOnClickListener(v->{
+            switchFragment(FragmentB.class);
+            drawer.closeDrawers();
+        });
     }
 
     @Override

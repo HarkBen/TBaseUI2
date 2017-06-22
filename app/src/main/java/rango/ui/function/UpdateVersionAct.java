@@ -2,6 +2,7 @@ package rango.ui.function;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.rg.function.utils.TBaseManager;
@@ -21,37 +22,47 @@ import rango.tbaseui.R;
  * Last_Update - 2017/6/21
  */
 public class UpdateVersionAct extends TBaseActivity {
+    private EditText editText;
+
     @Override
     public void onLayoutLoaded(Bundle savedInstanceState) {
         getTitleBar().setText("使用更新", TbaseTitleBar.POSITION_CENTER);
+
+        editText = new EditText(this);
+        editText.setText("https://github.com/HarkBen/TBaseUI2/raw/master/file%20list/app-debug.apk");
         Button button = new Button(this);
-        button.setText("开启版本更新");
-        button.setBackgroundResource(R.drawable.se_btn_gray_white);
+        button.setText("建议版本更新");
+        button.setBackgroundResource(R.drawable.btn_ripple);
         setContentLayout(button);
-        button.setOnClickListener(v -> updateVersion());
+        button.setOnClickListener(v -> updateVersion(false));
+        Button button2 = new Button(this);
+        button2.setText("强制版本更新");
+        button2.setBackgroundResource(R.drawable.btn_ripple);
+        setContentLayout(button2);
+        button2.setOnClickListener(v -> updateVersion(true));
     }
 
-    private void updateVersion(){
+    private void updateVersion(boolean mandatory){
         UpdateVersionInfo info = new UpdateVersionInfo();
-        info.setMandatory(false);//非强制更新
-        info.setApkLoadUrl("http://192.168.0.18:8080/JenkinsApk/2017-06-09-14-22/DangJianAND-v2.0-debug.apk");
-        info.setDescription("我这一生走过最长的路，就是你的套路。");
+        info.setMandatory(mandatory);//是否强制更新
+        info.setApkLoadUrl(editText.getText().toString().trim());
+        info.setDescription("新版本添加了终极无敌新功能，赶快下载更新吧");
         info.setProjectName("TBaseUITest");
-        info.setNewVersionName("0.9");
+        info.setNewVersionName("1.1");
         TBaseManager.showUpdateVersionDialog(this, info, new UpdateVersionDialog.VersionCallback() {
             @Override
             public void onSkipUpdate() {
-                Toast.makeText(UpdateVersionAct.this,"选择跳过本次更新",Toast.LENGTH_LONG).show();
+                Toast.makeText(UpdateVersionAct.this,"选择跳过本次更新,正常登陆",Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void exit() {
-                Toast.makeText(UpdateVersionAct.this,"强制更新不可跳过",Toast.LENGTH_LONG).show();
+                Toast.makeText(UpdateVersionAct.this,"强制更新不可跳过,退出程序",Toast.LENGTH_LONG).show();
             }
 
             @Override
-            public void onDownFaild(boolean mandatory) {
-                Toast.makeText(UpdateVersionAct.this,"下载更新文件失败",Toast.LENGTH_LONG).show();
+            public void onDownFaild(boolean mandatory,Throwable e) {
+                Toast.makeText(UpdateVersionAct.this,"下载apk文件失败="+e.getMessage(),Toast.LENGTH_LONG).show();
             }
 
             @Override

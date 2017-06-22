@@ -11,6 +11,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -36,7 +37,8 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
 
     private static String fileSavePath;
     private ProgressBar progressBar;
-    private TextView tvLeftBtn, tvRightBtn, tvDescription, tvOnStartDownLoad;
+    private TextView  tvDescription, tvOnStartDownLoad;
+    private Button  tvLeftBtn, tvRightBtn;
     private View duv_verticalLine;
     private VersionCallback versionCallback;
     private UpdateVersionInfo mVersionBean;
@@ -57,8 +59,8 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
 
     private void initView(UpdateVersionInfo versionBean) {
         progressBar = (ProgressBar) findViewById(R.id.duv_progressbar);
-        tvRightBtn = (TextView) findViewById(R.id.duv_rightBtn);
-        tvLeftBtn = (TextView) findViewById(R.id.duv_leftBtn);
+        tvRightBtn = (Button) findViewById(R.id.duv_rightBtn);
+        tvLeftBtn = (Button) findViewById(R.id.duv_leftBtn);
         tvDescription = (TextView) findViewById(R.id.duv_description);
         tvOnStartDownLoad = (TextView) findViewById(R.id.duv_onStartDownload);
         duv_verticalLine = findViewById(R.id.duv_verticalLine);
@@ -166,7 +168,7 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
 
                     @Override
                     protected void error(BaseDownloadTask task, Throwable e) {
-                        versionCallback.onDownFaild(mVersionBean.isMandatory());
+                        versionCallback.onDownFaild(mVersionBean.isMandatory(),e);
                         dismiss();
                     }
 
@@ -199,7 +201,7 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
 
         void exit();
 
-        void onDownFaild(boolean mandatory);
+        void onDownFaild(boolean mandatory,Throwable e);
 
         void onDownCompile(String filePath);
     }

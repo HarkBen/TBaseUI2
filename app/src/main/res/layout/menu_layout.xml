@@ -12,15 +12,20 @@
             android:background="@mipmap/menu_top"
             android:layout_height="160dip" />
     </RelativeLayout>
-    <TextView
+    <Button
+        android:layout_marginTop="@dimen/dp_10"
+        android:id="@+id/menu_item1"
+        android:text="Fragment - A"
+        android:background="@drawable/btn_ripple"
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:text="MENU"
-        android:textColor="@color/white"
-        android:textSize="20dip"
-        android:gravity="center"
-        />
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_marginTop="@dimen/dp_10"
+        android:id="@+id/menu_item2"
+        android:text="Fragment - B"
+        android:background="@drawable/btn_ripple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>

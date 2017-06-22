@@ -104,13 +104,16 @@ public class TbaseTitleBar extends RelativeLayout implements View.OnClickListene
     private View inflaterView(int LayoutId, ViewGroup root, boolean attachToRoot) {
         return inflater.inflate(LayoutId, root, attachToRoot);
     }
+
     //-- root ------------
     public void setBackgroundDrawable(@DrawableRes int resid) {
         titleRootLayout.setBackgroundResource(resid);
     }
+
     public void setBackgroundColorRes(@ColorRes int resid) {
         titleRootLayout.setBackgroundResource(resid);
     }
+
     public void setBackgroundColorInt(@ColorInt int color) {
         titleRootLayout.setBackgroundColor(color);
     }
@@ -146,6 +149,26 @@ public class TbaseTitleBar extends RelativeLayout implements View.OnClickListene
         return setText(s, position);
     }
 
+    public RadioButton setTitleText(@StringRes int id) {
+        return setText(id, POSITION_CENTER);
+    }
+
+    public RadioButton setTitleText(@NonNull String s) {
+        return setText(s, POSITION_CENTER);
+    }
+
+    public RadioButton getLeftBtn() {
+        return radioButtonLeft;
+    }
+
+    public RadioButton getRightBtn() {
+        return radioButtonRight;
+    }
+
+    public RadioButton getCenterBtn() {
+        return radioButtonCenter;
+    }
+
     public RadioButton setText(@NonNull String s, int position) {
         RadioButton result = null;
         switch (position) {
@@ -168,7 +191,7 @@ public class TbaseTitleBar extends RelativeLayout implements View.OnClickListene
     }
 
     //---设置图片资源
-    public RadioButton setButtonDrawableRes(@DrawableRes int id,int position){
+    public RadioButton setButtonBackGroundDrawableRes(@DrawableRes int id, int position) {
         RadioButton result = null;
         switch (position) {
             case POSITION_LEFT:

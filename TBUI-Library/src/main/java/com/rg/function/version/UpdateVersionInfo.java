@@ -4,7 +4,7 @@ package com.rg.function.version;
  * Create on 2017/6/20.
  * github  https://github.com/HarkBen
  * Description:
- * -----------
+ * ----所有属性都必须初始化，否则会导致文件处理失败-------
  * author Ben
  * Last_Update - 2017/6/20
  */

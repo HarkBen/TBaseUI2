@@ -20,7 +20,7 @@ public class SwipeBackAct extends TBaseActivity {
     @Override
     public void onLayoutLoaded(Bundle savedInstanceState) {
         getTitleBar().setText("边缘右滑返回", TbaseTitleBar.POSITION_CENTER);
-        getTitleBar().setButtonDrawableRes(R.drawable.ic_arrow_back_white_36dp,TbaseTitleBar.POSITION_LEFT)
+        getTitleBar().setButtonBackGroundDrawableRes(R.drawable.ic_arrow_back_white_36dp,TbaseTitleBar.POSITION_LEFT)
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

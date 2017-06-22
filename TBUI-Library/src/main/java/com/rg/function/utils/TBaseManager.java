@@ -19,19 +19,21 @@ import com.rg.function.version.UpdateVersionInfo;
  * Last_Update - 2017/6/22
  */
 public class TBaseManager {
-    private static UpdateVersionDialog updateVersionDialog = null;
 
-    public static void init(Application context, @StyleRes int styleId, @ColorInt
+    /**
+     * @param context 必须使用Application　
+     * @param styleId
+     * @param color
+     */
+    public static void init(Context context, @StyleRes int styleId, @ColorInt
          int color) {
         FileDownloader.init(context);
         TBaseSPUtils.initTeme(context,styleId,color);
     }
 
     public static void showUpdateVersionDialog(@NonNull Context context, @NonNull UpdateVersionInfo versionBean, UpdateVersionDialog.VersionCallback versionCallback){
-        if(null  == updateVersionDialog){
-            updateVersionDialog = UpdateVersionDialog.create(context,versionBean,versionCallback);
-        }
-        updateVersionDialog.show();
+          UpdateVersionDialog.create(context,versionBean,versionCallback).show();
+
     }
 
 }

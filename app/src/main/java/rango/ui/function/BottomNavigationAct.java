@@ -8,6 +8,7 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.rg.ui.baseactivity.TBaseFragmentGroupActivity;
 import com.rg.ui.basefragment.TBaseFragment;
+import com.rg.ui.basetitle.TbaseTitleBar;
 
 import java.util.HashMap;
 
@@ -30,12 +31,12 @@ public class BottomNavigationAct extends TBaseFragmentGroupActivity {
 
     @Override
     public void onLayoutloaded() {
+        getTitleBar().setText("fragment 切换策略", TbaseTitleBar.POSITION_CENTER);
        final HashMap<Integer,Class<?extends TBaseFragment>> map = new HashMap<>();
         map.put(0,FragmentA.class);
         map.put(1,FragmentB.class);
         map.put(2,FragmentC.class);
         map.put(3,FragmentD.class);
-
       final AHBottomNavigation ahBottomNavigation = (AHBottomNavigation) findViewById(R.id.bn_bottomNaviagte);
 
         AHBottomNavigationItem item1 = new AHBottomNavigationItem("Plan",0);

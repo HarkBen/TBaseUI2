@@ -9,4 +9,5 @@
     <color name="tbaseWhitesmoke">#F5F5F5</color><!--烟白色 -->
     <color name="tbaseGray_5">#CDCDCD</color>
     <color name="tbaseColortransparent_07">#09000000</color><!-- 透明 70 -->
+    <color name="tbaseTextColor">#5d5d5d</color><!--烟白色 -->
 </resources>

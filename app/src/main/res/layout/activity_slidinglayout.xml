@@ -35,16 +35,20 @@
             android:background="@color/testmodelblue"
             android:orientation="vertical">
 
-            <TextView
+            <Button
+                android:id="@+id/menu_itema"
+                android:text="Fragment-A"
+                android:background="@drawable/btn_ripple"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="@dimen/nav_header_vertical_spacing"
-                android:text="菜 单"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="@color/white"
-                android:textSize="25sp" />
+                android:layout_height="wrap_content" />
 
+            <Button
+                android:layout_marginTop="10dp"
+                android:id="@+id/menu_itemb"
+                android:text="Fragment-B"
+                android:background="@drawable/btn_ripple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </com.rg.function.customview.CustomDrawLayout>
