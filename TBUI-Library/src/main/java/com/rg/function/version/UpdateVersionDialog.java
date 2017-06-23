@@ -42,6 +42,7 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
     private View duv_verticalLine;
     private VersionCallback versionCallback;
     private UpdateVersionInfo mVersionBean;
+    private String progressDesc;
 
     public static   UpdateVersionDialog create(@NonNull Context context, @NonNull UpdateVersionInfo versionBean, VersionCallback versionCallback){
         return new UpdateVersionDialog(context,versionBean,versionCallback);
@@ -68,7 +69,7 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
         tvLeftBtn.setOnClickListener(this);
         tvDescription.setText(mVersionBean.getDescription());
         if (versionBean.isMandatory()) {
-            tvLeftBtn.setText("退出");
+            tvLeftBtn.setText(R.string.tbaseExitApp);
         }
     }
 
@@ -78,12 +79,10 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
         if (view.getId() == R.id.duv_leftBtn) {
             if (mVersionBean.isMandatory()) {
                 versionCallback.exit();
-                dismiss();
             } else {
                 versionCallback.onSkipUpdate();
-                dismiss();
             }
-
+            dismiss();
         } else if (view.getId() == R.id.duv_rightBtn) {
             tvLeftBtn.setVisibility(View.GONE);
             tvRightBtn.setVisibility(View.GONE);
@@ -92,8 +91,6 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
             progressBar.setVisibility(View.VISIBLE);
             //开始下载
             startLoadApkTak();
-
-
         }
 
     }
@@ -135,6 +132,7 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
 
                     @Override
                     protected void connected(BaseDownloadTask task, String etag, boolean isContinue, int soFarBytes, int totalBytes) {
+
                     }
 
                     @Override
@@ -144,7 +142,8 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
                         BigDecimal divide = soFar.divide(total, 3, BigDecimal.ROUND_HALF_EVEN);
                         int progress = (int) (divide.doubleValue() * 100);
                         progressBar.setProgress(progress);
-                        tvOnStartDownLoad.setText("全速下载中...  " + progress + "%");
+                        progressDesc = getContext().getResources().getString(R.string.tbaseDownloading) + progress + "%";
+                        tvOnStartDownLoad.setText(progressDesc);
                     }
 
                     @Override

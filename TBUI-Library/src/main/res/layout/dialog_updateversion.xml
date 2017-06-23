@@ -17,7 +17,7 @@
         android:layout_centerHorizontal="true">
         <TextView
             android:layout_width="match_parent"
-            android:text="发现新版本"
+            android:text="@string/tbaseFindNewVersion"
             android:padding="14dp"
             android:gravity="center"
             android:textColor="@color/tbaseTextColor"
@@ -59,7 +59,7 @@
                 android:id="@+id/duv_onStartDownload"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
-                android:text="正在下载"
+                android:text="@string/tbaseDownloading"
                 android:visibility="gone"
                 android:gravity="center"
                 android:background="@drawable/se_btn_gray_white"
@@ -68,7 +68,7 @@
                 android:id="@+id/duv_leftBtn"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
-                android:text="稍后再说"
+                android:text="@string/tbaseConsiderLater"
                 android:textColor="@color/tbaseTextColor"
                 android:gravity="center"
                 android:background="@drawable/se_btn_gray_white"
@@ -83,13 +83,12 @@
                 android:id="@+id/duv_rightBtn"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
-                android:text="立即下载"
+                android:text="@string/tbaseUpdateRightNow"
                 android:textColor="@color/tbaseTextColor"
                 android:gravity="center"
                 android:background="@drawable/se_btn_gray_white"
                 android:layout_height="45dp" />
         </LinearLayout>
     </LinearLayout>
-
 
 </RelativeLayout>
