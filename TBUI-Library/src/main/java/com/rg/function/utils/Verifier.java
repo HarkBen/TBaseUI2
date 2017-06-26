@@ -1,5 +1,8 @@
 package com.rg.function.utils;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -16,7 +19,7 @@ public class Verifier {
      * @param psw2
      * @return
      */
-    public static boolean pswVerifier(String psw1, String psw2) {
+    public static boolean pswVerifier(@NonNull String psw1, @NonNull String psw2) {
         if (!(psw1.trim().equals(psw2.trim()))) {
             return false;
         }
@@ -29,7 +32,7 @@ public class Verifier {
      * @param str
      * @return
      */
-    public static boolean isNull(String str) {
+    public static boolean isNull(@Nullable String str) {
         if (str == null)
             return true;
         if (str.trim().equals(""))
@@ -46,7 +49,7 @@ public class Verifier {
      *
      * @return
      */
-    public static boolean isNull(Long l) {
+    public static boolean isNull(@Nullable Long l) {
         if (l == null)
             return true;
         else
@@ -58,7 +61,7 @@ public class Verifier {
      *
      * @return
      */
-    public static boolean isNull(Integer l) {
+    public static boolean isNull(@Nullable Integer l) {
         if (l == null)
             return true;
         else
@@ -72,7 +75,7 @@ public class Verifier {
      * @param mobiles
      * @return
      */
-    public static boolean isMobileNO(String mobiles) {
+    public static boolean isMobileNO(@NonNull String mobiles) {
         /*
 		 * 总结起来就是第一位必定为1，其他位置的可以为0-9(包含虚拟运营商)
 		 */
@@ -86,12 +89,12 @@ public class Verifier {
     /**
      * 昵称 验证
      */
-    public static boolean isNickName(String nickName) {
+    public static boolean isNickName(@NonNull String nickName) {
         String nameRegex = "^[a-zA-z]\\w{3,15}$";
         return nickName.matches(nameRegex);
     }
 
-    public static boolean isNumeric(String str){
+    public static boolean isNumeric(@NonNull String str){
         for (int i = str.length();--i>=0;){
             if (!Character.isDigit(str.charAt(i))){
                 return false;
@@ -106,7 +109,7 @@ public class Verifier {
      * @param name
      * @return
      */
-    public static boolean isName(String name) {
+    public static boolean isName(@NonNull String name) {
         // 汉字2到4位 或者英文名2到50位
         String nameRegex = "^[\u4e00-\u9fa5]{2,4}$|^[a-zA-Z]{2,50}$";
         if (isNull(name))
@@ -120,7 +123,7 @@ public class Verifier {
      *
      * @return
      */
-    public static boolean isIDCard(String iDCard) {
+    public static boolean isIDCard(@NonNull String iDCard) {
         String IDCardRegex = "([1-9]\\d{5}[1-2]\\d{3}[0-1]\\d[0-3]\\d{4}(x|X|\\d))|([1-9]\\d{5}\\d{2}[0-1]\\d[0-3]\\d{3}(x|X|\\d))";
         if (isNull(iDCard)) {
             return false;
@@ -131,7 +134,7 @@ public class Verifier {
     /**
      * 身高
      */
-    public static boolean isStature(String stature) {
+    public static boolean isStature(@NonNull String stature) {
         String statureRegex = "([1-3]\\d{2})|([1-9]\\d)";
         if (isNull(stature)) {
             return false;
@@ -139,7 +142,7 @@ public class Verifier {
         return stature.matches(statureRegex);
     }
 
-    public static boolean isDateYear(String date) {
+    public static boolean isDateYear(@NonNull String date) {
         String format = "([1-2]\\d{3})";
         return date.matches(format);
     }
@@ -165,7 +168,7 @@ public class Verifier {
     /**
      * 邮箱格式验证
      */
-    public static boolean isEmail(String email) {
+    public static boolean isEmail(@NonNull String email) {
         String emailRegex = "\\w[-\\w.+]*@([-\\w.+]+\\.)+[A-Za-z]{2,14}";
         return email.matches(emailRegex);
     }
@@ -173,71 +176,81 @@ public class Verifier {
     /**
      * Long == null or= 0
      */
-    public static Long isNUll(Long l) {
+    @Nullable
+    public static Long isNUll(@Nullable Long l) {
         if (null == l) {
             return 0L;
         }
         return l;
     }
 
-    public static Long toLong(String s) {
+    public static Long toLong(@Nullable String s) {
         if (null == s || "".equals(s)) {
             return 0L;
         }
         return Long.valueOf(s);
     }
 
-    public static String toString(Object o) {
+    public static String toString(@Nullable Object o) {
         if (o != null) {
             return String.valueOf(o);
         }
         return "";
     }
 
-    public static String existence(String s) {
+    @Nullable
+    public static String existence(@Nullable String s) {
         if (null == s)
             return "";
         return s;
     }
-    public static String existenceToString(Long s) {
+    @NonNull
+    public static String existenceToString(@Nullable Long s) {
         if (null == s)
             return "";
         return s+"";
     }
-    public static String existenceToString(Integer s) {
+    @NonNull
+    public static String existenceToString(@Nullable Integer s) {
         if (null == s)
             return "";
         return s+"";
     }
-    public static String existenceToString(Float s) {
+    @NonNull
+    public static String existenceToString(@Nullable Float s) {
         if (null == s)
             return "";
         return s+"";
     }
-    public static String existenceToString(Double s) {
+    @NonNull
+    public static String existenceToString(@Nullable Double s) {
         if (null == s)
             return "";
         return s+"";
     }
-    public static Long existence(Long s) {
+    @Nullable
+    public static Long existence(@Nullable Long s) {
         if (null == s)
             return 0L;
         return s;
     }
 
-    public static Integer existence(Integer s) {
+    @Nullable
+    public static Integer existence(@Nullable Integer s) {
         if (null == s)
             return 0;
         return s;
     }
 
-    public static Float existence(Float f){
+    @Nullable
+    public static Float existence(@Nullable Float f){
         if(null == f){
             return 0F;
         }
         return  f;
     }
-    public static Double existence(Double s) {
+    @Nullable
+    public static Double existence(@Nullable Double s) {
         if (null == s)
             return 0.00;
         return s;
@@ -246,7 +259,7 @@ public class Verifier {
     /**
      * 检查是否为纯数字
      */
-    public static boolean isOnlyContainsNumber(String stature) {
+    public static boolean isOnlyContainsNumber(@NonNull String stature) {
         String statureRegex = "(^[0-9]*$)";
         if (isNull(stature)) {
             return false;
@@ -255,7 +268,7 @@ public class Verifier {
     }
 
 
-    public  static boolean   isNotNUll(List<?> l){
+    public  static boolean   isNotNUll(@Nullable List<?> l){
         if(null != l && l.size() > 0){
             return  true;
         }else {

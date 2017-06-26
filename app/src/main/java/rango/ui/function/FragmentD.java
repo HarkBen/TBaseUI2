@@ -1,6 +1,7 @@
 package rango.ui.function;
 
 import android.support.annotation.ColorInt;
+import android.support.annotation.NonNull;
 
 import rango.tbaseui.R;
 
@@ -20,6 +21,7 @@ public class FragmentD extends FragmentA {
         return getTBaseFGActivity().getResources().getColor(R.color.testModelgreen);
     }
 
+    @NonNull
     @Override
     public String getTitle(){
         return "FragmentD";

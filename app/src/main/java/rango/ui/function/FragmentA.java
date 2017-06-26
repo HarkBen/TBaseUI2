@@ -2,6 +2,7 @@ package rango.ui.function;
 
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,7 @@ public class FragmentA extends TBaseFragment {
     private TextView tvName;
 
     @Override
-    public void onInitLayout(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public void onInitLayout(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_a, container, false);
         setContentLayout(view);
         tvName = (TextView) view.findViewById(R.id.fa_tv_Name);

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -69,7 +70,7 @@ public class MainActivity extends TBaseActivity {
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new FunctionAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(FunctionListBean bean, View view) {
+            public void onItemClick(@NonNull FunctionListBean bean, View view) {
                 Intent intent = new Intent(MainActivity.this,bean.getClzz());
                 startActivity(intent);
             }

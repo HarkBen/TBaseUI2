@@ -1,6 +1,8 @@
 package com.rg.ui.baseactivity;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -40,23 +42,24 @@ public abstract class TBaseFragmentGroupActivity extends TBaseActivity {
      */
     public abstract View setLayoutView();
 
-    public TBaseFragment switchFragment(Class<? extends TBaseFragment> clazz) {
+    public TBaseFragment switchFragment(@NonNull Class<? extends TBaseFragment> clazz) {
         return switchFragment(fragmentContainerId(), clazz, null, null);
     }
 
-    public TBaseFragment switchFragment(Class<? extends TBaseFragment> clazz, Serializable s) {
+    public TBaseFragment switchFragment(@NonNull Class<? extends TBaseFragment> clazz, Serializable s) {
         return switchFragment(fragmentContainerId(), clazz, s, null);
     }
 
-    public TBaseFragment switchFragment(Class<? extends TBaseFragment> clazz, Serializable s, String str) {
+    public TBaseFragment switchFragment(@NonNull Class<? extends TBaseFragment> clazz, Serializable s, String str) {
         return switchFragment(fragmentContainerId(), clazz, s, str);
     }
 
-    public TBaseFragment switchFragment(Class<? extends TBaseFragment> clazz, String str) {
+    public TBaseFragment switchFragment(@NonNull Class<? extends TBaseFragment> clazz, String str) {
         return switchFragment(fragmentContainerId(), clazz, null, str);
     }
 
-    public TBaseFragment findFragmentByTag(Class clazz) {
+    @NonNull
+    public TBaseFragment findFragmentByTag(@NonNull Class clazz) {
         FragmentManager fm = getSupportFragmentManager();
         return (TBaseFragment) fm.findFragmentByTag(clazz.getName());
     }
@@ -66,7 +69,7 @@ public abstract class TBaseFragmentGroupActivity extends TBaseActivity {
      * @param clazz   position fragment
      * @return current show fragment
      */
-    private TBaseFragment switchFragment(int frameId, Class<? extends TBaseFragment> clazz, Serializable s, String str) {
+    private TBaseFragment switchFragment(int frameId, @NonNull Class<? extends TBaseFragment> clazz, @Nullable Serializable s, @Nullable String str) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         Bundle bundle = null;
@@ -112,7 +115,7 @@ public abstract class TBaseFragmentGroupActivity extends TBaseActivity {
      *
      * @param clazz
      */
-    public void hideFragment(Class<? extends TBaseFragment> clazz) {
+    public void hideFragment(@NonNull Class<? extends TBaseFragment> clazz) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         TBaseFragment currentFragment = (TBaseFragment) fm.findFragmentByTag(clazz.getName());
@@ -128,7 +131,7 @@ public abstract class TBaseFragmentGroupActivity extends TBaseActivity {
      *
      * @param clazz
      */
-    public void removeFragment(Class<? extends TBaseFragment> clazz) {
+    public void removeFragment(@NonNull Class<? extends TBaseFragment> clazz) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         TBaseFragment currentFragment = (TBaseFragment) fm.findFragmentByTag(clazz.getName());

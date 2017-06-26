@@ -6,6 +6,7 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -39,10 +40,13 @@ public class TbaseTitleBar extends RelativeLayout implements View.OnClickListene
     private RelativeLayout titleRootLayout;
 
 
+    @Nullable
     private OnTbaseTitleLeftViewClickListener onTbaseTitleLeftViewClickListener;
 
+    @Nullable
     private OnTbaseTitleCenterViewClickListener onTbaseTitleCenterViewClickListener;
 
+    @Nullable
     private OnTbaseTitleRightViewClickListener onTbaseTitleRightViewClickListener;
 
     public interface OnTbaseTitleLeftViewClickListener {
@@ -62,7 +66,7 @@ public class TbaseTitleBar extends RelativeLayout implements View.OnClickListene
      *
      * @param context
      */
-    public TbaseTitleBar(Context context) {
+    public TbaseTitleBar(@NonNull Context context) {
         super(context);
         initLayout(context);
     }
@@ -73,7 +77,7 @@ public class TbaseTitleBar extends RelativeLayout implements View.OnClickListene
      * @param context
      * @param attrs
      */
-    public TbaseTitleBar(Context context, AttributeSet attrs) {
+    public TbaseTitleBar(@NonNull Context context, AttributeSet attrs) {
         super(context, attrs);
         initLayout(context);
     }
@@ -85,12 +89,12 @@ public class TbaseTitleBar extends RelativeLayout implements View.OnClickListene
      * @param attrs    layout_width layout_height
      * @param defStyle
      */
-    public TbaseTitleBar(Context context, AttributeSet attrs, int defStyle) {
+    public TbaseTitleBar(@NonNull Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initLayout(context);
     }
 
-    private final void initLayout(Context context) {
+    private final void initLayout(@NonNull Context context) {
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         titleRootLayout = (RelativeLayout) inflaterView(R.layout.tbase_titlebar_layout, this, true);
         radioButtonLeft = (RadioButton) titleRootLayout.findViewById(R.id.tbase_titleLayout_left);
@@ -144,15 +148,18 @@ public class TbaseTitleBar extends RelativeLayout implements View.OnClickListene
     }
 
     //---- 设置字符资源
+    @Nullable
     public RadioButton setText(@StringRes int id, int position) {
         String s = getResources().getString(id);
         return setText(s, position);
     }
 
+    @Nullable
     public RadioButton setTitleText(@StringRes int id) {
         return setText(id, POSITION_CENTER);
     }
 
+    @Nullable
     public RadioButton setTitleText(@NonNull String s) {
         return setText(s, POSITION_CENTER);
     }
@@ -169,6 +176,7 @@ public class TbaseTitleBar extends RelativeLayout implements View.OnClickListene
         return radioButtonCenter;
     }
 
+    @Nullable
     public RadioButton setText(@NonNull String s, int position) {
         RadioButton result = null;
         switch (position) {
@@ -191,6 +199,7 @@ public class TbaseTitleBar extends RelativeLayout implements View.OnClickListene
     }
 
     //---设置图片资源
+    @Nullable
     public RadioButton setButtonBackGroundDrawableRes(@DrawableRes int id, int position) {
         RadioButton result = null;
         switch (position) {
@@ -214,7 +223,7 @@ public class TbaseTitleBar extends RelativeLayout implements View.OnClickListene
 
 
     @Override
-    public void onClick(View v) {
+    public void onClick(@NonNull View v) {
         if (v.getId() == R.id.tbase_titleLayout_left) {
             if (null != onTbaseTitleLeftViewClickListener) {
                 onTbaseTitleLeftViewClickListener.onClick(v);

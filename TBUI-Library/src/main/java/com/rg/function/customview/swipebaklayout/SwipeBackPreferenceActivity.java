@@ -3,6 +3,7 @@ package com.rg.function.customview.swipebaklayout;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+import android.support.annotation.Nullable;
 import android.view.View;
 
 public class SwipeBackPreferenceActivity extends PreferenceActivity implements SwipeBackActivityBase {
@@ -21,6 +22,7 @@ public class SwipeBackPreferenceActivity extends PreferenceActivity implements S
         mHelper.onPostCreate();
     }
 
+    @Nullable
     @Override
     public View findViewById(int id) {
         View v = super.findViewById(id);

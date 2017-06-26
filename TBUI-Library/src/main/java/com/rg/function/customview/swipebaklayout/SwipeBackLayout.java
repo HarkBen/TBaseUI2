@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -119,6 +120,7 @@ public class SwipeBackLayout extends FrameLayout {
 
     private boolean mInLayout;
 
+    @NonNull
     private Rect mTmpRect = new Rect();
 
     /**
@@ -126,15 +128,15 @@ public class SwipeBackLayout extends FrameLayout {
      */
     private int mTrackingEdge;
 
-    public SwipeBackLayout(Context context) {
+    public SwipeBackLayout(@NonNull Context context) {
         this(context, null);
     }
 
-    public SwipeBackLayout(Context context, AttributeSet attrs) {
+    public SwipeBackLayout(@NonNull Context context, AttributeSet attrs) {
         this(context, attrs, R.attr.SwipeBackLayoutStyle);
     }
 
-    public SwipeBackLayout(Context context, AttributeSet attrs, int defStyle) {
+    public SwipeBackLayout(@NonNull Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs);
         mDragHelper = ViewDragHelper.create(this, new ViewDragCallback());
 
@@ -362,7 +364,7 @@ public class SwipeBackLayout extends FrameLayout {
     }
 
     @Override
-    public boolean onInterceptTouchEvent(MotionEvent event) {
+    public boolean onInterceptTouchEvent(@NonNull MotionEvent event) {
         if (!mEnable) {
             return false;
         }
@@ -376,7 +378,7 @@ public class SwipeBackLayout extends FrameLayout {
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
+    public boolean onTouchEvent(@NonNull MotionEvent event) {
         if (!mEnable) {
             return false;
         }
@@ -402,7 +404,7 @@ public class SwipeBackLayout extends FrameLayout {
     }
 
     @Override
-    protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
+    protected boolean drawChild(@NonNull Canvas canvas, @NonNull View child, long drawingTime) {
         final boolean drawContent = child == mContentView;
 
         boolean ret = super.drawChild(canvas, child, drawingTime);
@@ -414,7 +416,7 @@ public class SwipeBackLayout extends FrameLayout {
         return ret;
     }
 
-    private void drawScrim(Canvas canvas, View child) {
+    private void drawScrim(@NonNull Canvas canvas, @NonNull View child) {
         final int baseAlpha = (mScrimColor & 0xff000000) >>> 24;
         final int alpha = (int) (baseAlpha * mScrimOpacity);
         final int color = alpha << 24 | (mScrimColor & 0xffffff);
@@ -429,7 +431,7 @@ public class SwipeBackLayout extends FrameLayout {
         canvas.drawColor(color);
     }
 
-    private void drawShadow(Canvas canvas, View child) {
+    private void drawShadow(@NonNull Canvas canvas, @NonNull View child) {
         final Rect childRect = mTmpRect;
         child.getHitRect(childRect);
 
@@ -455,7 +457,7 @@ public class SwipeBackLayout extends FrameLayout {
         }
     }
 
-    public void attachToActivity(Activity activity) {
+    public void attachToActivity(@NonNull Activity activity) {
         mActivity = activity;
         TypedArray a = activity.getTheme().obtainStyledAttributes(new int[]{
                 android.R.attr.windowBackground
@@ -560,7 +562,7 @@ public class SwipeBackLayout extends FrameLayout {
         }
 
         @Override
-        public void onViewReleased(View releasedChild, float xvel, float yvel) {
+        public void onViewReleased(@NonNull View releasedChild, float xvel, float yvel) {
             final int childWidth = releasedChild.getWidth();
             final int childHeight = releasedChild.getHeight();
 
@@ -581,7 +583,7 @@ public class SwipeBackLayout extends FrameLayout {
         }
 
         @Override
-        public int clampViewPositionHorizontal(View child, int left, int dx) {
+        public int clampViewPositionHorizontal(@NonNull View child, int left, int dx) {
             int ret = 0;
             if ((mTrackingEdge & EDGE_LEFT) != 0) {
                 ret = Math.min(child.getWidth(), Math.max(left, 0));
@@ -592,7 +594,7 @@ public class SwipeBackLayout extends FrameLayout {
         }
 
         @Override
-        public int clampViewPositionVertical(View child, int top, int dy) {
+        public int clampViewPositionVertical(@NonNull View child, int top, int dy) {
             int ret = 0;
             if ((mTrackingEdge & EDGE_BOTTOM) != 0) {
                 ret = Math.min(0, Math.max(top, -child.getHeight()));

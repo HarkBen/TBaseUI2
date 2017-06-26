@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.annotation.StyleRes;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -44,11 +46,8 @@ public abstract class TBaseActivity extends SwipeBackActivity {
     //    private ProgressBar loadAnimationImageView;
     private RotateLoading rotateLoading;
 
-    /**
-     * onLoading anmination
-     */
-    private AnimationDrawable animationDrawable;
 
+    @Nullable
     private TbaseTitleBar titleBar;
 
     /**
@@ -107,6 +106,7 @@ public abstract class TBaseActivity extends SwipeBackActivity {
     }
 
 
+    @Nullable
     public  TbaseTitleBar getTitleBar() {
         if (null != titleBar) {
             return titleBar;
@@ -214,7 +214,8 @@ public abstract class TBaseActivity extends SwipeBackActivity {
      *
      * @return 状态栏矩形条
      */
-    private View createStatusView(Activity activity, @ColorInt int color) {
+    @NonNull
+    private View createStatusView(@NonNull Activity activity, @ColorInt int color) {
         // 获得状态栏高度
         int resourceId = activity.getResources()
                 .getIdentifier("status_bar_height", "dimen", "android");
@@ -234,7 +235,7 @@ public abstract class TBaseActivity extends SwipeBackActivity {
     /**
      * 设置状态栏颜色 * * @param activity 需要设置的activity * @param color 状态栏颜色值
      */
-    private void addStatusToRootLayout(Activity activity, @ColorInt int color) {
+    private void addStatusToRootLayout(@NonNull Activity activity, @ColorInt int color) {
         // 生成一个状态栏大小的矩形
         View statusView = createStatusView(activity, color);
         statusView.setFitsSystemWindows(true);

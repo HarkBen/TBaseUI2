@@ -44,6 +44,7 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
     private UpdateVersionInfo mVersionBean;
     private String progressDesc;
 
+    @NonNull
     public static   UpdateVersionDialog create(@NonNull Context context, @NonNull UpdateVersionInfo versionBean, VersionCallback versionCallback){
         return new UpdateVersionDialog(context,versionBean,versionCallback);
     }
@@ -58,7 +59,7 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
     }
 
 
-    private void initView(UpdateVersionInfo versionBean) {
+    private void initView(@NonNull UpdateVersionInfo versionBean) {
         progressBar = (ProgressBar) findViewById(R.id.duv_progressbar);
         tvRightBtn = (Button) findViewById(R.id.duv_rightBtn);
         tvLeftBtn = (Button) findViewById(R.id.duv_leftBtn);
@@ -75,7 +76,7 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
 
 
     @Override
-    public void onClick(View view) {
+    public void onClick(@NonNull View view) {
         if (view.getId() == R.id.duv_leftBtn) {
             if (mVersionBean.isMandatory()) {
                 versionCallback.exit();
@@ -155,7 +156,7 @@ public class UpdateVersionDialog extends Dialog implements View.OnClickListener 
                     }
 
                     @Override
-                    protected void completed(BaseDownloadTask task) {
+                    protected void completed(@NonNull BaseDownloadTask task) {
                         versionCallback.onDownCompile(task.getPath());
                         dismiss();
                     }

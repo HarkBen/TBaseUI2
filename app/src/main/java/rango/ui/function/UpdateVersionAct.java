@@ -1,6 +1,7 @@
 package rango.ui.function;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -64,7 +65,7 @@ public class UpdateVersionAct extends TBaseActivity {
             }
 
             @Override
-            public void onDownFaild(boolean mandatory,Throwable e) {
+            public void onDownFaild(boolean mandatory, @NonNull Throwable e) {
                 Toast.makeText(UpdateVersionAct.this,"下载apk文件失败="+e.getMessage(),Toast.LENGTH_LONG).show();
             }
 

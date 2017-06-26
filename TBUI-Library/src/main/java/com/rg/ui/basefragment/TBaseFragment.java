@@ -2,6 +2,7 @@ package com.rg.ui.basefragment;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -62,7 +63,7 @@ public abstract class TBaseFragment extends Fragment {
      * 设置子类布局
      * @param view
      */
-    public void setContentLayout(View view){
+    public void setContentLayout(@Nullable View view){
         if(null != contentView && null != view){
             if(contentView.getChildCount() > 0 ){
                 contentView.removeAllViews();
@@ -88,6 +89,7 @@ public abstract class TBaseFragment extends Fragment {
         super.onAttach(activity);
     }
 
+    @NonNull
     public TBaseFragmentGroupActivity getTBaseFGActivity() {
         Activity activity = getActivity();
         if(activity instanceof  TBaseFragmentGroupActivity){

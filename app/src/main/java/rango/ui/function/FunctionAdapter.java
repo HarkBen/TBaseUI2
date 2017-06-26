@@ -1,6 +1,8 @@
 package rango.ui.function;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +24,7 @@ import rango.tbaseui.R;
 public class FunctionAdapter extends RecyclerView.Adapter<FunctionAdapter.MyViewHolder> {
     private List<FunctionListBean> datas;
     private Context context;
+    @Nullable
     private OnItemClickListener onItemClickListener = null;
 
     public FunctionAdapter(List<FunctionListBean> datas, Context context) {
@@ -30,6 +33,7 @@ public class FunctionAdapter extends RecyclerView.Adapter<FunctionAdapter.MyView
     }
 
 
+    @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_function, parent, false);
@@ -38,7 +42,7 @@ public class FunctionAdapter extends RecyclerView.Adapter<FunctionAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
         holder.tv.setText(datas.get(position).getFunctionName());
         holder.tv.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +69,7 @@ public class FunctionAdapter extends RecyclerView.Adapter<FunctionAdapter.MyView
     class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView tv;
 
-        public MyViewHolder(View itemView) {
+        public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             tv = (TextView) itemView.findViewById(R.id.if_tv_name);
         }

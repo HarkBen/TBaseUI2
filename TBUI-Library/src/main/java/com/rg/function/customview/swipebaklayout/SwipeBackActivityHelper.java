@@ -3,6 +3,7 @@ package com.rg.function.customview.swipebaklayout;
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -48,6 +49,7 @@ public class SwipeBackActivityHelper {
         mSwipeBackLayout.attachToActivity(mActivity);
     }
 
+    @Nullable
     public View findViewById(int id) {
         if (mSwipeBackLayout != null) {
             return mSwipeBackLayout.findViewById(id);

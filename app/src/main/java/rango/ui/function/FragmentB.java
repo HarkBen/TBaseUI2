@@ -2,6 +2,7 @@ package rango.ui.function;
 
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ public class FragmentB extends FragmentA {
     public @ColorInt int getBgColor() {
         return getTBaseFGActivity().getResources().getColor(R.color.testModelcpink);
     }
+    @NonNull
     @Override
     public String getTitle(){
         return "FragmentB";

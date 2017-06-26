@@ -25,7 +25,7 @@ public class TBaseManager {
      * @param styleId
      * @param color
      */
-    public static void init(Context context, @StyleRes int styleId, @ColorInt
+    public static void init(@NonNull Context context, @StyleRes int styleId, @ColorInt
          int color) {
         FileDownloader.init(context);
         TBaseSPUtils.initTeme(context,styleId,color);
