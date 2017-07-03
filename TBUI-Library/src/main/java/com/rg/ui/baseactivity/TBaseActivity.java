@@ -2,7 +2,6 @@ package com.rg.ui.baseactivity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
@@ -250,7 +249,11 @@ public abstract class TBaseActivity extends SwipeBackActivity {
      * 设置当前打开的Activity的布局
      */
     public final void setContentLayout(View view) {
-        childContentLayout.addView(view, childContentLayout.getChildCount());
+        if(childContentLayout.getChildCount()>0){
+            childContentLayout.removeAllViews();
+        }
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        childContentLayout.addView(view,childContentLayout.getChildCount(),params);
     }
     public final void setContentLayout(@LayoutRes int layoutId){
         View view = LayoutInflater.from(this).inflate(layoutId, null);
