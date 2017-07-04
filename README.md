@@ -1,4 +1,5 @@
 ### Android 轻量级UI框架
+[![Build Status](https://travis-ci.org/HarkBen/TBaseUI2.svg?branch=master)](https://travis-ci.org/HarkBen/TBaseUI2)
    在总结一往大小开发经验后，封装集成了这个单纯面向UI的框架。
    简易的封装层，轻量的层级依赖关系，极少的耦合关系。
     
