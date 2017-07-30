@@ -33,16 +33,16 @@ public class UpdateVersionAct extends TBaseActivity {
 
         editText = new EditText(this);
         editText.setText("https://github.com/HarkBen/TBaseUI2/raw/master/filelist/tbaseui-debug.apk");
-        setContentLayout(editText);
+        addViewToContentLayout(editText);
         Button button = new Button(this);
         button.setText("建议版本更新");
         button.setBackgroundResource(R.drawable.btn_ripple);
-        setContentLayout(button);
+        addViewToContentLayout(button);
         button.setOnClickListener(v -> updateVersion(false));
         Button button2 = new Button(this);
         button2.setText("强制版本更新");
         button2.setBackgroundResource(R.drawable.btn_ripple);
-        setContentLayout(button2);
+        addViewToContentLayout(button2);
         button2.setOnClickListener(v -> updateVersion(true));
     }
 
